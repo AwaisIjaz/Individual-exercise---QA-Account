@@ -14,6 +14,6 @@ public class AppTest {
     public void testApp(){
 		HomeController hc = new HomeController();
 		String result = hc.home();
-		assertEquals();
+		assertEquals(result, "QA, reporting for duty!");
 	}		 
 }
