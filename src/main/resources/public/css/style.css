@@ -11,10 +11,10 @@ body {
 .pad-top {
   padding-top: 60px;
 }
-.accounttable tr td:nth-child(2) {
+.qaaccounttable tr td:nth-child(2) {
   width: 150px;
 }
-.accounttable tr:nth-child(1) td {
+.qaaccounttable tr:nth-child(1) td {
   border-top: none;
 }
 /* Have to set height explicity on ui-view

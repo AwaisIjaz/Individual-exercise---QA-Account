@@ -1,0 +1,23 @@
+<div class="container pad-top">
+  <table class="table qaaccounttable">
+      <tr>
+          <td><h3>Details for {{qaaccount.firstName}}</h3></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>First Name</td>
+          <td>{{qaaccount.firstName}}</td>
+      </tr>
+      <tr>
+          <td>Last Name</td>
+          <td>{{qaaccount.lastName}}</td>
+      </tr>
+      <tr>
+          <td>Account Number</td>
+          <td>{{qaaccount.accountNumber}}</td>
+      </tr>
+  </table>
+  <div>
+      <a class="btn btn-primary" ui-sref="editQAAccount({id:qaaccount.id})">Edit</a>
+  </div>
+</div>

@@ -45,22 +45,22 @@
 					pageTitle: 'Home'
 				}
 			})
-			.state('accounts',{
-	        url:'/accounts',
-	        templateUrl: viewsPrefix + 'accounts.html',
-	        controller:'AccountListController'
-	    }).state('viewAccount',{
-	       url:'/account/:id/view',
-	       templateUrl: viewsPrefix + 'account-view.html',
-	       controller:'AccountViewController'
-	    }).state('newAccount',{
-	        url:'/accounts/new',
-	        templateUrl: viewsPrefix + 'account-add.html',
-	        controller:'AccountCreateController'
-	    }).state('editAccount',{
-	        url:'/accounts/:id/edit',
-	        templateUrl: viewsPrefix + 'account-edit.html',
-	        controller:'AccountEditController'
+			.state('qaaccounts',{
+	        url:'/qaaccounts',
+	        templateUrl: viewsPrefix + 'qaaccounts.html',
+	        controller:'QAAccountListController'
+	    }).state('viewQAAccount',{
+	       url:'/qaaccount/:id/view',
+	       templateUrl: viewsPrefix + 'qaaccount-view.html',
+	       controller:'QAAccountViewController'
+	    }).state('newQAAccount',{
+	        url:'/qaaccounts/new',
+	        templateUrl: viewsPrefix + 'qaaccount-add.html',
+	        controller:'QAAccountCreateController'
+	    }).state('editQAAccount',{
+	        url:'/qaaccounts/:id/edit',
+	        templateUrl: viewsPrefix + 'qaaccount-edit.html',
+	        controller:'QAAccountEditController'
 	    })
 	})
 	.directive('updateTitle', ['$rootScope', '$timeout',
