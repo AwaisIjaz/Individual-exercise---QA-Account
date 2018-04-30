@@ -1,34 +1,34 @@
-angular.module('app.controllers', []).controller('AccountListController', function($scope, $state, popupService, $window, Account) {
-  $scope.accounts = Account.query(); //fetch all shipwrecks. Issues a GET to /api/vi/shipwrecks
+angular.module('app.controllers', []).controller('QAAccountListController', function($scope, $state, popupService, $window, QAAccount) {
+  $scope.accounts = QAAccount.query(); //fetch all shipwrecks. Issues a GET to /api/vi/shipwrecks
 
-  $scope.deleteAccount = function(account) { // Delete a Shipwreck. Issues a DELETE to /api/v1/shipwrecks/:id
+  $scope.deleteQAAccount = function(qaaccount) { // Delete a Shipwreck. Issues a DELETE to /api/v1/shipwrecks/:id
     if (popupService.showPopup('Really delete this?')) {
-      account.$delete(function() {
-        $scope.accounts = Account.query(); 
-        $state.go('accounts');
+      qaaccount.$delete(function() {
+        $scope.qaaccounts = QAAccount.query(); 
+        $state.go('qaaccounts');
       });
     }
   };
-}).controller('AccountViewController', function($scope, $stateParams, Account) {
-  $scope.account = Account.get({ id: $stateParams.id }); //Get a single shipwreck.Issues a GET to /api/v1/shipwrecks/:id
-}).controller('AccountCreateController', function($scope, $state, $stateParams, Account) {
-  $scope.account = new Account();  //create new shipwreck instance. Properties will be set via ng-model on UI
+}).controller('QAAccountViewController', function($scope, $stateParams, QAAccount) {
+  $scope.qaaccount = QAAccount.get({ id: $stateParams.id }); //Get a single shipwreck.Issues a GET to /api/v1/shipwrecks/:id
+}).controller('QAAccountCreateController', function($scope, $state, $stateParams, QAAccount) {
+  $scope.qaaccount = new QAAccount();  //create new shipwreck instance. Properties will be set via ng-model on UI
 
-  $scope.addAccount = function() { //create a new shipwreck. Issues a POST to /api/v1/shipwrecks
-    $scope.account.$save(function() {
-      $state.go('accounts'); // on success go back to the list i.e. shipwrecks state.
+  $scope.addQAAccount = function() { //create a new shipwreck. Issues a POST to /api/v1/shipwrecks
+    $scope.qaaccount.$save(function() {
+      $state.go('qaaccounts'); // on success go back to the list i.e. shipwrecks state.
     });
   };
-}).controller('AccountEditController', function($scope, $state, $stateParams, Account) {
-  $scope.updateAccount = function() { //Update the edited shipwreck. Issues a PUT to /api/v1/shipwrecks/:id
-    $scope.account.$update(function() {
-      $state.go('accounts'); // on success go back to the list i.e. shipwrecks state.
+}).controller('QAAccountEditController', function($scope, $state, $stateParams, QAAccount) {
+  $scope.updateQAAccount = function() { //Update the edited shipwreck. Issues a PUT to /api/v1/shipwrecks/:id
+    $scope.qaaccount.$update(function() {
+      $state.go('qaaccounts'); // on success go back to the list i.e. shipwrecks state.
     });
   };
 
-  $scope.loadAccount = function() { //Issues a GET request to /api/v1/shipwrecks/:id to get a shipwreck to update
-    $scope.account = Account.get({ id: $stateParams.id });
+  $scope.loadQAAccount = function() { //Issues a GET request to /api/v1/shipwrecks/:id to get a shipwreck to update
+    $scope.qaaccount = QAAccount.get({ id: $stateParams.id });
   };
 
-  $scope.loadAccount(); // Load a shipwreck which can be edited on UI
+  $scope.loadQAAccount(); // Load a shipwreck which can be edited on UI
 });
