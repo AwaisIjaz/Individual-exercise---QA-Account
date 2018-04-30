@@ -1,6 +1,9 @@
 package com.qa;
 
 import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 
 import org.junit.Before;
 import org.junit.Test;
@@ -32,7 +35,9 @@ public class QAAccountControllerTest {
 		when(qaaccountrepository.findOne(1l)).thenReturn(qa);
 		
 		QAAccount account = qc.get(1l);
-		assertEquals(1l, account.getId().longValue());
-
+		
+		verify(qaaccountrepository).findOne(1l);
+		//assertEquals(1l, account.getId().longValue());
+		assertThat(account.getId(), is(1l));
 	}
 }
